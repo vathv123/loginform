@@ -21,7 +21,7 @@ body{
     border-radius: 10px;
     background: transparent;
     backdrop-filter: blur(4px);
-    height: 220px;
+    height: 620px;
     z-index: -2;
     overflow: hidden;
 }
@@ -34,6 +34,7 @@ form{
     position: relative;
     font-family: "Koulen", sans-serif;
     gap: 15px;
+    top: 20px;
 }
 i[class="fa-solid fa-user"],
 i[class="fa-solid fa-lock"]{
@@ -53,6 +54,14 @@ span{
     margin: -25px 0px 0px -90px;
     transition: 0.5s;
     animation: moveup 0.5s forwards;
+    &:nth-of-type(3){
+        margin: -30px 0px 0px -120px;
+    }
+    &:nth-of-type(4){
+        margin: -28px 0px 0px 0px;
+        z-index: 10;
+        color: white;
+    }
 }
 @keyframes moveup{
     0% {
@@ -77,19 +86,21 @@ input[required]{
 }
 input[required]:focus{
     box-shadow: 0px 0px 5px white;
-
 }
 input[type="username"]:valid ~ span:nth-of-type(1),
-input[type="username"]:valid ~ span:nth-of-type(2)
+input[type="username"]:valid ~ span:nth-of-type(2),
+input[type="email"]:valid ~ span:nth-of-type(3)
 {
     animation: moveup 0.5s forwards;
 }
 input[type="password"]:focus ~ span:nth-of-type(1),
-input[type="password"]:focus ~ span:nth-of-type(2) {
+input[type="password"]:focus ~ span:nth-of-type(2),
+input[type="email"]:focus ~ span:nth-of-type(3) {
     animation: moveup 0.5s forwards;
 }
 input[type="username"]:not(:focus) ~ span,
-input[type="password"]:not(:focus) ~ span
+input[type="password"]:not(:focus) ~ span,
+input[type="email"]:not(:focus) ~ span
 {
     animation: none;
 }
@@ -105,5 +116,22 @@ input{
         height: 20px;
         padding: 0;
         padding-bottom: 24px;
+    }
+    &:nth-of-type(5){
+        width: 90px;
+        margin-top: 10px;
+        border-radius: 7px;
+        border: 1px solid white;
+        background: transparent;
+    }
+    &:nth-of-type(8), &:nth-of-type(10), &:nth-of-type(11), &:nth-of-type(12), &:nth-of-type(13){
+        background-color: transparent;
+        border: 1px solid white;
+        box-shadow: 0px 0px 3px white;
+        border-radius: 4px;
+        color: white;
+    }
+    &:nth-of-type(12), &:nth-of-type(13){
+        width: 120px;
     }
 }
