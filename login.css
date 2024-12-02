@@ -1,0 +1,109 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Koulen", sans-serif;
+    background-image: url('https://wallpapercave.com/wp/wp5534741.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.login{
+    position: absolute;
+    box-shadow: 0px 1px 5px white;
+    width: 320px;
+    border-radius: 10px;
+    background: transparent;
+    backdrop-filter: blur(4px);
+    height: 220px;
+    z-index: -2;
+    overflow: hidden;
+}
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 5px;
+    position: relative;
+    font-family: "Koulen", sans-serif;
+    gap: 15px;
+}
+i[class="fa-solid fa-user"],
+i[class="fa-solid fa-lock"]{
+    color: white;
+    margin: -35px 0px 0px 130px;
+    font-size: 0.8rem;
+}
+input[type="username"]:focus ~ i:nth-of-type(1),
+input[type="password"]:focus ~ i:nth-of-type(2)
+{
+    color: black;
+} 
+span{
+    z-index: -1;
+    color: white;
+    transform: scale(0.8);
+    margin: -25px 0px 0px -90px;
+    transition: 0.5s;
+    animation: moveup 0.5s forwards;
+}
+@keyframes moveup{
+    0% {
+        transform: scale(0.8) translateY(0px);
+    }
+    100% {
+        transform: scale(0.8) translateY(-35px);
+    }
+}
+input[required]{
+    width: 170px;
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: "Koulen", sans-serif;
+    /* outline: none; */
+    /* outline here សម្រាប់ Inset border-color  */
+}
+input[required]:focus{
+    box-shadow: 0px 0px 5px white;
+
+}
+input[type="username"]:valid ~ span:nth-of-type(1),
+input[type="username"]:valid ~ span:nth-of-type(2)
+{
+    animation: moveup 0.5s forwards;
+}
+input[type="password"]:focus ~ span:nth-of-type(1),
+input[type="password"]:focus ~ span:nth-of-type(2) {
+    animation: moveup 0.5s forwards;
+}
+input[type="username"]:not(:focus) ~ span,
+input[type="password"]:not(:focus) ~ span
+{
+    animation: none;
+}
+input{
+    font-size: 1.2rem;
+    &:nth-of-type(3){
+        font-size: 13px;
+        border-radius: 6px;
+        color: white;
+        background-color: transparent;
+        border: 1px solid;
+        width: 70px;
+        height: 20px;
+        padding: 0;
+        padding-bottom: 24px;
+    }
+}
